@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "f68cbca59bdd08c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee52c8e171962b34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d79b1552cc9bc0e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MCU开发相关/STM32F1 标准工程建立.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f4e36f1fae68bb06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MCU开发相关/STM32F1 FreeRTOS移植.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f30094accf65b734",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MCU开发相关/ARM Cortex MCU Debug Collection.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "963d788df40189ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "196eb70f39f2ad29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d6b38d4e690e390",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "730c36a421caa5ea",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ec0fa9e34cb36a1c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f85b98ec42eb281f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4d767239a067e5d5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "04156280218ceef6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MCU开发相关/STM32F1 FreeRTOS移植.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3523a2d62127d9da",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MCU开发相关/STM32F1 FreeRTOS移植.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b86395265cf15b84",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a183d0807e704997",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MCU开发相关/STM32F1 FreeRTOS移植.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "canvas:Create new canvas": false
+    }
+  },
+  "active": "f4e36f1fae68bb06",
+  "lastOpenFiles": [
+    "MCU开发相关/STM32F1 标准工程建立.md",
+    "MCU开发相关/ARM Cortex MCU Debug Collection.md",
+    "MCU开发相关/STM32F1 FreeRTOS移植.md",
+    "README.md"
+  ]
+}
