@@ -211,7 +211,7 @@ standard names. */
 ```
 
 
-# 关于 heap_x.c的区别
+# 关于不同的内存算法 heap_x.c的区别
 https://www.cnblogs.com/FutureHardware/p/14220238.html
 
 ## heap_1
@@ -248,6 +248,14 @@ https://www.cnblogs.com/FutureHardware/p/14220238.html
 -   heap_5 不局限于从静态内存数组中分配内存，它可以从 多个、不连续的内存空间中分配内存。
 -   当使用heap_5时，`vPortDefineHeapRegions()`必须在 pvPofrtMalloc、内核对象之前调用。
 
+## 正点原子对于这五个内存算法的描述
+heap_1： 最简单，只允许申请内存，不允许释放内存。
+heap_2： 允许申请和释放内存，但不能合并相邻的空闲内存块。
+heap_3： 简单封装 C 库的函数 malloc()和函数 free()， 以确保线程安全。
+heap_4： 允许申请和释放内存，并且能够合并相邻的空闲内存块，减少内存碎片的产生。
+heap_5： 能够管理多个非连续内存区域的 heap_4
+
+
 
 # 根据实际情况实现Assert宏
 鉴于某些情况下可能无法使用debuger调试器，可以改写ASSERT宏使用printf 输出错误的位置。
@@ -259,3 +267,4 @@ https://www.cnblogs.com/FutureHardware/p/14220238.html
 #define configASSERT(x)             if((x)==0) vAssertCalled(__FILE__,__LINE__)
 #endif
 ```
+
