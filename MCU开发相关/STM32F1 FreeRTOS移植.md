@@ -249,11 +249,11 @@ https://www.cnblogs.com/FutureHardware/p/14220238.html
 -   当使用heap_5时，`vPortDefineHeapRegions()`必须在 pvPofrtMalloc、内核对象之前调用。
 
 ## 正点原子对于这五个内存算法的描述
-heap_1： 最简单，只允许申请内存，不允许释放内存。
-heap_2： 允许申请和释放内存，但不能合并相邻的空闲内存块。
-heap_3： 简单封装 C 库的函数 malloc()和函数 free()， 以确保线程安全。
-heap_4： 允许申请和释放内存，并且能够合并相邻的空闲内存块，减少内存碎片的产生。
-heap_5： 能够管理多个非连续内存区域的 heap_4
+- heap_1： 最简单，只允许申请内存，不允许释放内存。
+- heap_2： 允许申请和释放内存，但不能合并相邻的空闲内存块。
+- heap_3： 简单封装 C 库的函数 malloc()和函数 free()， 以确保线程安全。
+- heap_4： 允许申请和释放内存，并且能够合并相邻的空闲内存块，减少内存碎片的产生。
+- heap_5： 能够管理多个非连续内存区域的 heap_4
 
 
 
@@ -266,5 +266,17 @@ heap_5： 能够管理多个非连续内存区域的 heap_4
 #define vAssertCalled(char,int)     {printf("Error: Assert failed :%s, L:%d\r\n",char,int); for(;;);}
 #define configASSERT(x)             if((x)==0) vAssertCalled(__FILE__,__LINE__)
 #endif
+```
+
+
+# SysTick 的启动
+```
+vTaskStartScheduler();
+	->xPortStartScheduler();
+		->vPortSetupTimerInterrupt();
+			->
+			/* Configure SysTick to interrupt at the requested rate. */
+		    portNVIC_SYSTICK_LOAD_REG = ( configSYSTICK_CLOCK_HZ / configTICK_RATE_HZ ) - 1UL;
+		    portNVIC_SYSTICK_CTRL_REG = ( portNVIC_SYSTICK_CLK_BIT_CONFIG | portNVIC_SYSTICK_INT_BIT | portNVIC_SYSTICK_ENABLE_BIT );
 ```
 

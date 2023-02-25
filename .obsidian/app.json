@@ -1,3 +1,5 @@
 {
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "./attachments",
+  "newFileLocation": "current",
+  "promptDelete": false
 }
