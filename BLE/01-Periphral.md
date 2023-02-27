@@ -205,7 +205,7 @@ Paring（配对）和Bonding（绑定）是实现蓝牙射频通信安全的一�
 
 1)连接：通讯的基础，通讯数据为明文；
 2)配对：配对仅仅是为了在连接的基础上加密(通讯数据经过加密为密文)，提高蓝牙链路传输的安全性。不配对也能连接进行通信。
-3)绑定：绑定是配对发起时的一个可选配置。把配对信息记录下来， 下次不用配对自动进入加密的连接；所以没在bonding列表里的设备不影响连接，照连不误。
+3)绑定：绑定是配对发起时的一个可选配置。把配对信息记录下来， 下次不用配对自动进入加密的连接；所以没在 bonding 列表里的设备不影响连接，照连不误。
 
 **这里涉及到一个概念，为什么我们日常使用的蓝牙产品很少要求绑定呢？**
 因为我们在使用绑定时，大部分是由应用层去管理的，如果需要绑定输入密码，首先会被系统层获取到，这就已经不安全了；其次，蓝牙的加密本身是不安全的，第一次连接有概率被监听到（后续的回连被监听的难度较大）
@@ -218,9 +218,9 @@ GATTServApp_AddService(GATT_ALL_SERVICES);   // GATT attributes
 DevInfo_AddService();                        // Device Information Service
 SimpleProfile_AddService(GATT_ALL_SERVICES); // Simple GATT Profile
 ```
-	前两个函数分别用于添加基础的GAP和GATT Service ?
-	第三行的函数用于添加设备信息(0x180A)这个Service,
-	第四行添加了一个自定义Service.(0xFFF0).
+	前两个函数分别用于添加基础的 GAP 和 GATT Service ?
+	第三行的函数用于添加设备信息(0x180A)这个 Service,
+	第四行添加了一个自定义 Service(0xFFF0) .
 
 ```
 // Setup the SimpleProfile Characteristic Values
@@ -238,7 +238,7 @@ SimpleProfile_AddService(GATT_ALL_SERVICES); // Simple GATT Profile
 	SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, charValue5);
 }
 ```
-	设置自定义Service的初始值。
+	设置自定义 Service 的 Characteristic Value 的初始值。
 
 
 ```
@@ -255,9 +255,9 @@ GAPRole_BroadcasterSetCB(&Broadcaster_BroadcasterCBs);
 tmos_set_event(Peripheral_TaskID, SBP_START_DEVICE_EVT);
 ```
 	设置连接参数？
-	设置自定义Service的回调函数
-	设置GAP的回调函数
-	启动任务(用于GAP Role的启动)。
+	设置自定义 Service 的回调函数
+	设置 GAP 的回调函数
+	启动任务(用于 GAP Role 的启动)。
 
 
 

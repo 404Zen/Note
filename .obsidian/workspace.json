@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "edc4dae4150869b8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BLE mesh/07-Configuration Model.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5d53543838a07323",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "工作记录/2023-01-01.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a914ad689572a267",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作记录/000-面试题.md",
+                "file": "杂项/000-基础知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,26 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作记录/000-面试题.md",
+                "file": "BLE/02-GATT Profile.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "dee7e177902aaaa7",
+            "id": "41770aab4e291391",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BLE mesh/05-PB_GATT入网过程.md",
+                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作记录/000-面试题.md",
+                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作记录/000-面试题.md",
+                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作记录/000-面试题.md"
+                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md"
               }
             }
           },
@@ -211,30 +187,44 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 305.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:新建白板": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "canvas:Create new canvas": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db58913aeeb2d9d2",
+  "active": "41770aab4e291391",
   "lastOpenFiles": [
+    "工作记录/000-Git 常用命令.md",
+    "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
     "BLE/02-GATT Profile.md",
     "BLE/01-Periphral.md",
-    "BLE/00-Before Start.md",
-    "工作记录/000-面试题.md",
-    "BLE mesh/01-SIG mesh.md",
-    "BLE mesh/06-PB ADV入网过程.md",
-    "BLE mesh/05-PB_GATT入网过程.md",
+    "杂项/000-基础知识.md",
     "工作记录/2023-01-01.md",
-    "MCU开发相关/STM32F1 FreeRTOS移植.md",
-    "MCU开发相关/STM32F1 标准工程建立.md"
+    "BLE mesh/07-Configuration Model.md",
+    "杂项",
+    "工作记录/attachments/Pasted image 20230227145029.png",
+    "工作记录/attachments/Pasted image 20230227142944.png",
+    "工作记录/attachments/Pasted image 20230227140859.png",
+    "工作记录/attachments/Pasted image 20230227140848.png",
+    "工作记录/attachments/Pasted image 20230227140844.png",
+    "BLE/00-Before Start.md",
+    "BLE/attachments/Pasted image 20230226132901.png",
+    "BLE/attachments/Pasted image 20230226132834.png",
+    "BLE/attachments/Pasted image 20230226132744.png",
+    "BLE/attachments/Pasted image 20230226130605.png",
+    "BLE/attachments/Pasted image 20230226130228.png",
+    "BLE mesh/02-SIG mesh 协议层分析.md",
+    "BLE mesh/01-SIG mesh.md",
+    "Linux/Ubuntu samba server.md",
+    "BLE mesh/06-PB ADV入网过程.md",
+    "BLE mesh/05-PB_GATT入网过程.md"
   ]
 }
