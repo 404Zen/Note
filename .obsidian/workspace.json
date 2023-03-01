@@ -37,19 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BLE/02-GATT Profile.md",
+                "file": "杂项/000-Git 常用命令.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "41770aab4e291391",
+            "id": "5dcb6ce3e370e161",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
+                "file": "杂项/000-基础知识.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
+                "file": "杂项/000-基础知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
+                "file": "杂项/000-基础知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md"
+                "file": "杂项/000-基础知识.md"
               }
             }
           },
@@ -200,31 +200,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "41770aab4e291391",
+  "active": "5dcb6ce3e370e161",
   "lastOpenFiles": [
-    "工作记录/000-Git 常用命令.md",
-    "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
+    "杂项/000-Realtek WiFi Chipset.md",
+    "杂项/000-Git 常用命令.md",
+    "杂项/000-基础知识.md",
     "BLE/02-GATT Profile.md",
     "BLE/01-Periphral.md",
-    "杂项/000-基础知识.md",
-    "工作记录/2023-01-01.md",
-    "BLE mesh/07-Configuration Model.md",
-    "杂项",
+    "BLE/00-Before Start.md",
+    "BLE mesh/05-PB_GATT入网过程.md",
+    "杂项/attachments/Pasted image 20230228183844.png",
+    "杂项/attachments",
     "工作记录/attachments/Pasted image 20230227145029.png",
     "工作记录/attachments/Pasted image 20230227142944.png",
     "工作记录/attachments/Pasted image 20230227140859.png",
     "工作记录/attachments/Pasted image 20230227140848.png",
+    "工作记录/attachments/Pasted image 20230225183130.png",
+    "工作记录/attachments/Pasted image 20230225175937.png",
+    "工作记录/attachments/Pasted image 20230221130521.png",
+    "工作记录/attachments/Pasted image 20230221130455.png",
+    "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
+    "工作记录/2023-01-01.md",
+    "BLE mesh/07-Configuration Model.md",
+    "杂项",
     "工作记录/attachments/Pasted image 20230227140844.png",
-    "BLE/00-Before Start.md",
-    "BLE/attachments/Pasted image 20230226132901.png",
-    "BLE/attachments/Pasted image 20230226132834.png",
-    "BLE/attachments/Pasted image 20230226132744.png",
-    "BLE/attachments/Pasted image 20230226130605.png",
-    "BLE/attachments/Pasted image 20230226130228.png",
     "BLE mesh/02-SIG mesh 协议层分析.md",
     "BLE mesh/01-SIG mesh.md",
     "Linux/Ubuntu samba server.md",
-    "BLE mesh/06-PB ADV入网过程.md",
-    "BLE mesh/05-PB_GATT入网过程.md"
+    "BLE mesh/06-PB ADV入网过程.md"
   ]
 }
