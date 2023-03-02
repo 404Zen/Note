@@ -13,31 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/000-基础知识.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "96f2afae4e4fb8a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BLE/01-Periphral.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "db58913aeeb2d9d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "杂项/000-Git 常用命令.md",
+                "file": "杂项/000-八股文.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +25,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/000-基础知识.md",
+                "file": "MCU开发相关/STM32F1 标准工程建立.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7c758eb15e61bd41",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "杂项/000-八股文.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "杂项/000-基础知识.md",
+                "file": "杂项/000-八股文.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "杂项/000-基础知识.md",
+                "file": "杂项/000-八股文.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂项/000-基础知识.md"
+                "file": "杂项/000-八股文.md"
               }
             }
           },
@@ -200,30 +187,39 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5dcb6ce3e370e161",
+  "active": "a914ad689572a267",
   "lastOpenFiles": [
-    "杂项/000-Realtek WiFi Chipset.md",
-    "杂项/000-Git 常用命令.md",
-    "杂项/000-基础知识.md",
-    "BLE/02-GATT Profile.md",
     "BLE/01-Periphral.md",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
+    "杂项/000-八股文.md",
+    "未命名.canvas",
+    "杂项/0000-启动文件与链接脚本.md",
+    "MCU开发相关/STM32F1 标准工程建立.md",
+    "杂项/attachments/Pasted image 20230302205816.png",
+    "杂项/attachments/Pasted image 20230302205453.png",
+    "杂项/000-Git 常用命令.md",
+    "杂项/000-AUTOSAR.md",
+    "杂项/attachments/Pasted image 20230302205329.png",
+    "工作记录/attachments/Pasted image 20230227142944.png",
+    "杂项/attachments/Pasted image 20230302205141.png",
+    "杂项/attachments/Pasted image 20230302201637.png",
+    "杂项/attachments/Pasted image 20230302201305.png",
+    "杂项/attachments/Pasted image 20230302201119.png",
+    "计算机体系结构/000-.md",
+    "计算机体系结构",
+    "MCU开发相关/Pasted image 20221224123554.png",
+    "MCU开发相关/ARM Cortex MCU Debug Collection.md",
+    "杂项/000-Realtek WiFi Chipset.md",
+    "BLE/02-GATT Profile.md",
     "BLE/00-Before Start.md",
     "BLE mesh/05-PB_GATT入网过程.md",
     "杂项/attachments/Pasted image 20230228183844.png",
     "杂项/attachments",
-    "工作记录/attachments/Pasted image 20230227145029.png",
-    "工作记录/attachments/Pasted image 20230227142944.png",
-    "工作记录/attachments/Pasted image 20230227140859.png",
-    "工作记录/attachments/Pasted image 20230227140848.png",
-    "工作记录/attachments/Pasted image 20230225183130.png",
-    "工作记录/attachments/Pasted image 20230225175937.png",
-    "工作记录/attachments/Pasted image 20230221130521.png",
-    "工作记录/attachments/Pasted image 20230221130455.png",
     "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
     "工作记录/2023-01-01.md",
     "BLE mesh/07-Configuration Model.md",
     "杂项",
-    "工作记录/attachments/Pasted image 20230227140844.png",
     "BLE mesh/02-SIG mesh 协议层分析.md",
     "BLE mesh/01-SIG mesh.md",
     "Linux/Ubuntu samba server.md",
