@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ee52c8e171962b34",
+        "id": "337d3ee76b2c83f9",
         "type": "tabs",
         "children": [
           {
-            "id": "7c758eb15e61bd41",
+            "id": "bea2e15e3b98c2eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "杂项/000-八股文.md",
+                "file": "杂项/000-AUTOSAR.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "杂项/000-八股文.md",
+                "file": "杂项/000-AUTOSAR.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "杂项/000-八股文.md",
+                "file": "杂项/000-AUTOSAR.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "杂项/000-八股文.md"
+                "file": "杂项/000-AUTOSAR.md"
               }
             }
           },
@@ -163,11 +163,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7c758eb15e61bd41",
+  "active": "bea2e15e3b98c2eb",
   "lastOpenFiles": [
+    "杂项/assert/Pasted image 20230302201637.png",
+    "杂项/assert/Pasted image 20230302201305.png",
+    "杂项/assert/autosar_arch.png",
+    "杂项/000-AUTOSAR.md",
     "杂项/0000-启动文件与链接脚本.md",
     "杂项/000-八股文.md",
-    "杂项/attachments/SPI.png",
+    "杂项/assert/UART.png",
+    "杂项/assert/IIC_1.png",
+    "杂项/assert/SPI.png",
     "attachments 3.md",
     "attachments 2.md",
     "MCU开发相关/STM32F1 标准工程建立.md",
@@ -177,15 +183,9 @@
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名.canvas",
-    "杂项/attachments/Pasted image 20230302205816.png",
-    "杂项/attachments/Pasted image 20230302205453.png",
+    "杂项/assert/IIC_2.png",
     "杂项/000-Git 常用命令.md",
-    "杂项/000-AUTOSAR.md",
-    "杂项/attachments/Pasted image 20230302205329.png",
     "工作记录/attachments/Pasted image 20230227142944.png",
-    "杂项/attachments/Pasted image 20230302201637.png",
-    "杂项/attachments/Pasted image 20230302201305.png",
-    "杂项/attachments/Pasted image 20230302201119.png",
     "计算机体系结构/000-.md",
     "计算机体系结构",
     "MCU开发相关/Pasted image 20221224123554.png",
@@ -195,7 +195,7 @@
     "BLE/00-Before Start.md",
     "BLE mesh/05-PB_GATT入网过程.md",
     "杂项/attachments/Pasted image 20230228183844.png",
-    "杂项/attachments",
+    "杂项/assert",
     "BLE/03-一个自定义的蓝牙 HID 复合设备的实现.md",
     "工作记录/2023-01-01.md",
     "BLE mesh/07-Configuration Model.md",

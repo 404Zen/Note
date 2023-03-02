@@ -1,7 +1,7 @@
 
 ## MCAL(Microcontroller Abstraction Layer)
 微控制器抽象层位于AUTOSAR BSW的最底层，包含内部驱动，可以直接访问微控制器和外设芯片。从具体应用上看，MCAL主要包括微控制器驱动，存储器驱动，通信驱动和输入输出驱动四个部分，各部分又由具体的与微控制器硬件相对应的驱动模块组成。
-![[attachments/Pasted image 20230302201119.png]]
+![autosar_arch](assert/autosar_arch.png)
 
 MCAL的存在，可以让其他层软件(如ECU抽象层，系统服务层等)，独立于MCU硬件平台，保证其软件的通用性。
 
