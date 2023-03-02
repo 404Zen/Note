@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a914ad689572a267",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "杂项/000-八股文.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5dcb6ce3e370e161",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MCU开发相关/STM32F1 标准工程建立.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "7c758eb15e61bd41",
             "type": "leaf",
             "state": {
@@ -93,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 485.5
   },
   "right": {
     "id": "f85b98ec42eb281f",
@@ -187,22 +163,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a914ad689572a267",
+  "active": "7c758eb15e61bd41",
   "lastOpenFiles": [
+    "杂项/0000-启动文件与链接脚本.md",
+    "杂项/000-八股文.md",
+    "杂项/attachments/SPI.png",
+    "attachments 3.md",
+    "attachments 2.md",
+    "MCU开发相关/STM32F1 标准工程建立.md",
+    "attachments 1.md",
+    "attachments.md",
     "BLE/01-Periphral.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
-    "杂项/000-八股文.md",
     "未命名.canvas",
-    "杂项/0000-启动文件与链接脚本.md",
-    "MCU开发相关/STM32F1 标准工程建立.md",
     "杂项/attachments/Pasted image 20230302205816.png",
     "杂项/attachments/Pasted image 20230302205453.png",
     "杂项/000-Git 常用命令.md",
     "杂项/000-AUTOSAR.md",
     "杂项/attachments/Pasted image 20230302205329.png",
     "工作记录/attachments/Pasted image 20230227142944.png",
-    "杂项/attachments/Pasted image 20230302205141.png",
     "杂项/attachments/Pasted image 20230302201637.png",
     "杂项/attachments/Pasted image 20230302201305.png",
     "杂项/attachments/Pasted image 20230302201119.png",
