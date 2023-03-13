@@ -5,7 +5,7 @@ Configuration model 属于 mesh 中的基础模型之一，其中包含了 Serve
 - 该模型主要用于表示设备加入mesh网络之后的mesh网络配置；mesh网络配置存放了节点的配置内容，如是否支持中继，是否支持朋友特性等等以及配置相对应的内容。
 - 如果应用层想要获取或配置该模型的内容，则需要通过 **设备密钥(device key)** 才能得到正确的数据内容。
 - 该模型是一个SIG定义的标准模型，其 SIG Model ID 为 0x0000
-![[Pasted image 20230218132016.png]]
+![[assert/Pasted image 20230218132016.png]]
 
 <table class="tg" style="undefined;table-layout: fixed; width: 714px">
 <colgroup>
@@ -558,7 +558,7 @@ Configuration model 属于 mesh 中的基础模型之一，其中包含了 Serve
 
 ## Composition Data
 这个状态包含了节点的信息，如其元素以及模型的信息。这些信息可以由多个信息页组成；但是目前SIG只规定了Page0的内容，其他信息页内容是可选的。那些，SIG规定的Composition Data Page0有哪些内容呢？我想信很多一直看我们[PB-GATT入网过程](05-PB_GATT入网过程.md)教程的读者应该对这些内容比较熟悉。没错！这些就是节点的元素、模型以及其所支持的特性等信息，入网成功之后Provisioner向节点获取得到的内容；
-![[Pasted image 20230218133520.png]]
+![[assert/Pasted image 20230218133520.png]]
 
 
 | Field                 | Size(octets) | Notes                                                                                                                 |
@@ -620,7 +620,7 @@ Configuration model 属于 mesh 中的基础模型之一，其中包含了 Serve
 ## NetKey List
 该状态表示网络密钥的索引列表，每个入口最多只能容纳两个NetKey，一个是旧的密钥，另外一个是新的密钥。
 小编一直都在强调，由于NetKey的长度一般都很长，将其塞入网络消息中不太实现；然而，使用一个索引值就可以找到相对应的NetKey的方式无疑是最佳的。一些消息可能有一个或者多个索引值，比如说：**节点使用“Config NetKey Add”添加了多个NetKey，现在通过“Config NetKey Get”获取当前的NetKey索引值，这个时候“Config NetKey List”就会携带多个NetKey索引值了**。然而，每个索引值的长度均为12Bits，不是8的倍数；这个时候就需要根据索引值个数的奇偶来重新组成这个索引值了，具体的实现方式如下所示：
-![[Pasted image 20230218135906.png]]
+![[assert/Pasted image 20230218135906.png]]
 
 ## AppKey List
 
@@ -658,10 +658,10 @@ Configuration model 属于 mesh 中的基础模型之一，其中包含了 Serve
 -   该模型是SIG的一个标准模型，其SIG Model ID为0x0001
 至于，该模型对应的状态和消息；小编在[Configuration Server Model](#Configuration-Server-Model)中已经详述，无非就是Client扮演的是配置Server的角色，而Server扮演的是接收Client的配置命令的角色；同样的消息在client端则是发往server，在server端则变成接收client的设置命令；基本上拥有配置Client模型的都是Provisioner，而Server模型的则是节点。它们两者的数据交互拓扑图如下所示：
 
-![[Pasted image 20230218140558.png]]
+![[assert/Pasted image 20230218140558.png]]
 
 
 **注意：同时支持Client模型和Server模型的叫控制端模型**
 
 
-![[Pasted image 20230218140623.png]]
+![[assert/Pasted image 20230218140623.png]]

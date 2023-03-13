@@ -8,14 +8,14 @@ HID（Human Interface Device）人体学接口设备，是生活中常见的输�
 任何低功耗蓝牙模块都可以通过软件开发实现HID功能，一个蓝牙模块要实现HID的功能，一般需满足如下两个条件：
 
 ### 在广播数据中广播HID的UUID，设备外观，设备名称等信息。 
-![[Pasted image 20230226130228.png]]
+![](assert/ad_type.png)
 蓝牙HID广播数据 
 
 HID服务的UUID是0x1812，键盘的外观是0x03C1，鼠标的外观是0x03C2，游戏手柄的外观是0x03C3。
 **我要实现的是复合类型的 HID 设备，设备外观将会使用 0x03C0 。**
 
 ### 在GATT中实现HID要求的服务和特性
-![[Pasted image 20230226130605.png]]
+![](assert/attribute_list.png)
 
 **0x1812**是HID Service的UUID，必须要使用该UUID实现服务。
 
@@ -83,8 +83,8 @@ static uint8_t scanRspData[] = {
 ```
 将广播数据修改完成后，编译烧录。
 可以在windows和nRF Connect 中看到一个名为 CH58x 的 HID 复合设备了。
-![[Pasted image 20230226132744.png]]
-![[Pasted image 20230226132901.png]]
+![](assert/windows_scan.png)
+![](assert/test_1.png)
 
 nRF Connect 中可以看到，这个设备在广播数据声明了两个服务，HID 和 Battery Service。
 
@@ -94,3 +94,61 @@ nRF Connect 中可以看到，这个设备在广播数据声明了两个服务�
 ## Scan Parameters Service
 
 ## Generic HID Service
+`HidEmu_Init()` 函数中设置了广播数据，扫描响应数据，设备名称，配对参数等等。
+最重要的 `Hid_AddService()` 函数, 初始化CCC Value Handle,  添加服务回调函数， 设置 include service, 配置Report map.  
+```
+bStatus_t Hid_AddService(void)
+{
+    uint8_t status = SUCCESS;
+
+    // Initialize Client Characteristic Configuration attributes
+    GATTServApp_InitCharCfg(INVALID_CONNHANDLE, hidReportConsumerInClientCharCfg);
+    GATTServApp_InitCharCfg(INVALID_CONNHANDLE, hidReportKeyInClientCharCfg);
+
+    // Register GATT attribute list and CBs with GATT Server App
+    status = GATTServApp_RegisterService(hidAttrTbl, GATT_NUM_ATTRS(hidAttrTbl), GATT_MAX_ENCRYPT_KEY_SIZE, &hidCBs);
+
+    // Set up included service
+    Batt_GetParameter(BATT_PARAM_SERVICE_HANDLE,
+                      &GATT_INCLUDED_HANDLE(hidAttrTbl, HID_INCLUDED_SERVICE_IDX));
+
+    // Construct map of reports to characteristic handles
+    // Each report is uniquely identified via its ID and type
+
+    // Consumer input report
+    hidRptMap[0].id = hidReportRefConsumerIn[0];
+    hidRptMap[0].type = hidReportRefConsumerIn[1];
+    hidRptMap[0].handle = hidAttrTbl[HID_REPORT_CONSUMER_IN_IDX].handle;
+    hidRptMap[0].cccdHandle = hidAttrTbl[HID_REPORT_CONSUMER_IN_CCCD_IDX].handle;
+    hidRptMap[0].mode = HID_PROTOCOL_MODE_REPORT;
+
+    /* Keyboard input report */
+    hidRptMap[1].id = hidReportRefKeyIn[0];
+    hidRptMap[1].type = hidReportRefKeyIn[1];
+    hidRptMap[1].handle = hidAttrTbl[HID_REPORT_KEY_IN_IDX].handle;
+    hidRptMap[1].cccdHandle = hidAttrTbl[HID_REPORT_KEY_IN_CCCD_IDX].handle;
+    hidRptMap[1].mode = HID_PROTOCOL_MODE_REPORT;
+
+    /* LED out report */
+    hidRptMap[2].id = hidReportRefLedOut[0];
+    hidRptMap[2].type = hidReportRefLedOut[1];
+    hidRptMap[2].handle = hidAttrTbl[HID_REPORT_LED_OUT_IDX].handle;
+    hidRptMap[2].cccdHandle = 0;
+    hidRptMap[2].mode = HID_PROTOCOL_MODE_REPORT;
+
+    // Feature report
+    hidRptMap[3].id = hidReportRefFeature[0];
+    hidRptMap[3].type = hidReportRefFeature[1];
+    hidRptMap[3].handle = hidAttrTbl[HID_FEATURE_IDX].handle;
+    hidRptMap[3].cccdHandle = 0;
+    hidRptMap[3].mode = HID_PROTOCOL_MODE_REPORT;
+
+    // Battery level input report
+    Batt_GetParameter(BATT_PARAM_BATT_LEVEL_IN_REPORT, &(hidRptMap[4]));
+
+    // Setup report ID map
+    HidDev_RegisterReports(HID_NUM_REPORTS, hidRptMap);
+
+    return (status);
+}
+```

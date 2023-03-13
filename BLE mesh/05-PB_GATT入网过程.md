@@ -6,9 +6,9 @@
 4. 认证
 5. 启动配置数据分发
 
-![[Pasted image 20230217164957.png]]
+![[assert/Pasted image 20230217164957.png]]
 
-![[Pasted image 20230217165058.png]]
+![[assert/Pasted image 20230217165058.png]]
 从上图可知，整个入网的过程还是比较复杂了，做了这么多交互就是为了最终的**provisioning data**中的值。在new device向provisioner发送provisioning complete PDU之后，new device华丽地转身为Node。
 
 # Mesh Provisioning Service
@@ -19,7 +19,7 @@
 -   mesh provisioning data out **(Notify)**
     该特征值主要用于provisioning server向provisioning client发送provisioning pdu
     
-![[Pasted image 20230217170853.png]]
+![[assert/Pasted image 20230217170853.png]]
 从上图的描述，provisioning pdus的交互都是在provisioning service中进行的。mesh provisioning data in与mesh provisioning data out中的进和出的参照物是设备本身；该服务的作用仅用于unprovisioned device与provisioner用于入网数据交互时使用。
 
 
@@ -33,7 +33,7 @@
 
 
 为了让上述的语句更加易于理解，我们可以查看下图中所述的mesh proxy service的工作原理：
-![[Pasted image 20230217171945.png]]
+![[assert/Pasted image 20230217171945.png]]
 从上面我们可以很清楚地了解到，**Mesh Network PDU**都可以通过 **mesh proxy data in**这个特征值传送相应的PDU至node。当然，也可以通过**mesh proxy data out**这个特征值传输相应的PDU至**provisioner**；那么，这两个特征值除了上面提及的PDU之外，它还能传输哪些类型的PDU呢？显然，小编这么说那么就肯定是不止上述的两种类型PDU啦，对吧😄。其实，该mesh proxy service是可以传输如下几种类型的PDU：
 
 -   Network PDU
@@ -52,7 +52,7 @@ Proxy客户端通过Proxy PDU与Proxy服务端进行数据交互；如上所述�
 
 ## Provisioning PDU
 该PDU的主要用于provisioner与new device的交互。帧格式如下
-![[Pasted image 20230217173022.png]]
+![[assert/Pasted image 20230217173022.png]]
 上图包含了GATT承载方式入网所用到的所有帧类型。
 - Padding
 	固定为0b00
@@ -83,7 +83,7 @@ Proxy客户端通过Proxy PDU与Proxy服务端进行数据交互；如上所述�
 
 ## Invitation(邀请)
 这个动作是provisioner主动发起的，当其发现对端设备是unprovisioned device时，便会向未入网的设备发出邀请；而其包含了两个步骤：
-![[Pasted image 20230217173705.png]]
+![[assert/Pasted image 20230217173705.png]]
 ### Provisioning Invite
 首先，provisioner通过**mesh proxy data in**特征值以Write Command的形式写入**Provisioning Invite PDU**，该类型的帧内容仅包括**attention time**，就是给予new device一个时间值，然后做出任何可以引起周边事物注意的动作时长为**attention time**秒，
 

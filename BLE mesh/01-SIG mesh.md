@@ -19,7 +19,7 @@
 
 # 基本定义
 SIG MESH目前是采用泛洪协议的mesh网络技术。属于网状网络结构。
-![[Pasted image 20230217150322.png]]
+![[assert/Pasted image 20230217150322.png]]
 
 # SIG mesh 中节点特性
 sig mesh 节点的特性都是可选的。

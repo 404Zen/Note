@@ -15,7 +15,7 @@
 -   同样，该模型也是一个根模型
 -   跟其他普通的SIG模型一样，该模型也支持发布与订阅的功能
 -   跟**Configuration Server Model**不同的是，其不但可以存在于首要元素中，也可以存在于次要元素中；同时，还可以在一个节点的不同元素中同时存在
-![[Pasted image 20230218141154.png]]
+![[assert/Pasted image 20230218141154.png]]
 -   与该模型的通讯均采用AppKey加解密
 -   其SIG Model ID为0x0002
 

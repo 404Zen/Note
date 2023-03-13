@@ -14,7 +14,7 @@ Central：功能相对更强大，用于连接外围设备，例如手机等。
 
 ## 广播数据
 在GAP中外围设备通过两种方式向外广播数据，Advertising Data Payload（广播数据）和 Scan Response Data Payload（扫描回复），每种数据最长可以包含 31 byte。Periphral设备需要不断地向外广播，让Central设备知道他的存在。Scan Response则是可选的，因为Scan Response一般携带的是额外信息。
-![[Pasted image 20230225184035.png]]
+![](assert/advertising_data.png)
 广播的流程大致如上，Periphral设备以一个时间间隔发送广播数据，当收到扫描请求的时候，则发送扫描回复。这个事件间隔在初始化的时候进行设定，时间间隔越长，设备功耗越低，但也更难被中心设备发现。
 
 CH58x通过以下函数设置广播时间间隔
@@ -28,7 +28,7 @@ GAP_SetParamValue(TGAP_DISC_ADV_INT_MAX, advInt);
 
 ## 广播的网络拓扑结构
 大部分情况下，外设通过广播自己来让中心设备发现自己，并建立 GATT 连接，从而进行更多的数据交换。也有些情况是不需要连接的，只要外设广播自己的数据即可。用这种方式主要目的是让外围设备，把自己的信息发送给多个中心设备。因为基于 GATT 连接的方式的，只能是一个外设连接一个中心设备。 使用广播这种方式最典型的应用就是苹果的 iBeacon。广播工作模式下的网络拓扑图如下:
-![[Pasted image 20230225184547.png]]
+![](assert/ble_broadcast_topology.png)
 
 
 # GATT
@@ -42,7 +42,7 @@ GATT 连接需要特别注意的是：GATT 连接是独占的。也就是一个 
 
 ## GATT网络连接拓扑
 下图展示了 GTT 连接网络拓扑结构。这里很清楚的显示，一个外设只能连接一个中心设备，而一个中心设备可以连接多个外设。
-![[Pasted image 20230225184826.png]]
+![](assert/connected_topology.png)
 一旦建立起了连接，通信就是双向的了，对比前面的 GAP 广播的网络拓扑，GAP 通信是单向的。如果你要让两个设备外设能通信，就只能通过中心设备中转。
 
 ## GATT通信事务
@@ -51,10 +51,10 @@ GATT 通信的双方是 C/S 关系。外设作为 GATT 服务端（Server），�
 一旦连接建立，外设将会给中心设备建议一个连接间隔（Connection Interval）,这样，中心设备就会在每个连接间隔尝试去重新连接，检查是否有新的数据。但是，这个连接间隔只是一个建议，你的中心设备可能并不会严格按照这个间隔来执行，例如你的中心设备正在忙于连接其他的外设，或者中心设备资源太忙。
 
 下图展示一个外设（GATT 服务端）和中心设备（GATT 客户端）之间的数据交换流程，可以看到的是，每次都是主设备发起请求：
-![[Pasted image 20230225185018.png]]
+![](assert/communication_transaction.png)
 
 ## GATT结构
-GATT 事务是建立在嵌套的Profiles, Services 和 Characteristics之上的的，如下图所示：![[Pasted image 20230225185050.png]]
+GATT 事务是建立在嵌套的Profiles, Services 和 Characteristics之上的的，如下图所示：![](assert/ble_profile.png)
 Profile Profile 并不是实际存在于 BLE 外设上的，它只是一个被 Bluetooth SIG 或者外设设计者预先定义的 Service 的集合。例如心率Profile（Heart Rate Profile）就是结合了 Heart Rate Service 和 Device Information Service。所有官方通过 GATT Profile 的列表可以从这里找到。
 
 Service Service 是把数据分成一个个的独立逻辑项，它包含一个或者多个 Characteristic。每个 Service 有一个 UUID 唯一标识。 UUID 有 16 bit 的，或者 128 bit 的。16 bit 的 UUID 是官方通过认证的，需要花钱购买，128 bit 是自定义的，这个就可以自己随便设置。
@@ -96,30 +96,30 @@ GATT定义了以下通用的Attribute Type：
 以上，Primary Service、Secondary Service 和Characteristic属于ATT protocol中定义的“group of attributes”。Service由其声明（declaration）、Include 和 Characteristic 组成一个group。Characteristic则由其声明、Value以及隶属于它的Descriptors组成。Primary Service、Secondary Service 都可以通过“Read By Group Type Request”来查询它们的起止handle，而Characteristic则需要多个procedure的组合来查询它的所有信息。
 
 有了以上的几个“group of attributes”的概念，一个完整的GATT Profile的层级视图就可以用下面的图大致勾画出来了：
-![[Pasted image 20230225192042.png]]
+![](assert/gatt_profile.png)
 注意到在上面的图中，Include、Descriptors 都是用虚线框表示的。因此，一个最简单的GATT层级图，将只有一个Service的描述、一个Characteristic的描述以及Characteristic的Value组成。
 此外，上图并没有单独列出Service的声明，而实际上它就是Service这个group的第一个Attribute。?
 
 **Primary Service 格式**
-![[Pasted image 20230225192835.png]]
+![](assert/service_declaration.png)
 Primary Service的Attribute Type就是GATT定义的通用的Attribute Type(0x2800或者0x2801)，Attribute Value字段是这个 Service 的 UUID, Attribute Permission则是这个Attribute的权限，Service的权限仅为只读。
 
 **Include 格式**
-![[Pasted image 20230225193437.png]]
+![](assert/include_declaration.png)
 Include 声明了这个服务所包含的服务，Attribute Value中的数据包括所包含服务的属性句柄，终止句柄，服务UUID，是一个只读的Attribute.
 
 **Characterstic 格式**
-![[Pasted image 20230225193838.png]]
+![](assert/attribute_value.png)
 
 Characterstic 主要用于说明 Service 的主要特性，Attribute Value由以下三部分组成
 - Characteristic Properties
-	![[Pasted image 20230225194247.png]]
+	![](assert/characteristic_properties_bit_field.png)
 	该字段决定了如何使用 Characteristic Value 或者 Characteristic Descriptors 是否能被访问(置位之后才会包含对应的Descriptor, 然后才能访问到？)，
 - Characteristic Value Handle : 保存Characteristic本身的value的handle值
 - Characteristic UUID : 由上层定义。
 
  **Characteristic Value的Attribute格式如下：**
- ![[Pasted image 20230225195004.png]]
+ ![](assert/characteristic_value_declaration.png)
  这里的Attribute Type是上层定义的。这也是GATT Profile当中唯一一个Type由上层定义的Attribute。其实它就是前面Characteristic声明中Attribute Value的Characteristic UUID字段。本身就是上层定义的，因此它的Attribute Permissions也是上层来决定的。每个基于GATT的profile都需要定义自己的Characteristic及其permissions。
 
 
@@ -278,14 +278,14 @@ static gattAttribute_t simpleProfileAttrTbl[] = {
 
 
 ### 抓包数据
-![[Pasted image 20230226112039.png]]
+![](assert/capture_data_1.png)
 
 从抓包数据看，在两个设备连接的时候，Central 会先请求设备的Primary Service，然后再请求 Characteristic。
 
-![[Pasted image 20230226112536.png]]
+![](assert/capture_data_3.png)
 Group Type Response 数据中包含了这个 Service 的所包含的所有条目的 Handle ，
 
-![[Pasted image 20230226112945.png]]
+![](assert/capture_data_2.png)
 (Attribute Type Response)
 Characteristic 数据中则包含了对应的 Attribute Value( Characteristic Properties, Characteristic Value Handle, Characteristic UUID).
 
