@@ -89,3 +89,10 @@ clr = USART1->DR;
 ```
 
 ----
+
+# FreeRTOS 相关
+
+## 死机
+打印如下log, 或者仿真卡在 B. address，无法跳转。
+`Error: Assert failed :../FreeRTOS/Source/portable/GCC/ARM_CM3/port.c, L:742`
+有可能是因为某个中断优先级太高, FreeRTOS中，用户任务的优先级必须小于等于 `configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY`。
